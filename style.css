@@ -3,30 +3,42 @@ body {
     background-color: #87CEEB;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure full viewport height */
+}	
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Take full height of the body */
 }
 
 .container {
     max-width: 800px;
-    margin: 20px auto;
-    padding: 0 5px;
+    margin: 150px auto 60px; /* Adjust margin to avoid overlap with header and footer */
+    padding: 20px 5px; /* Add padding to the top and bottom */
     background-color: #fff;
     border-radius: 8px;
+	 width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.header,
-.footer {
-    padding: 5px;
-    text-align: center;
-    color: #fff;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    flex: 1; /* Take remaining vertical space */
+    overflow-y: auto; /* Enable vertical scroll if needed */
 }
 
 .header {
     background-color: #FF6B6B;
+    padding: 5px;
+    text-align: center;
+    color: #fff;
     font-size: 18px;
-    margin-bottom: 0;
+    font-weight: bold;
+    position: fixed; /* Fixed position */
+    top: 0; /* Stick to the top */
+    left: 0; /* Ensure it's at the left edge */
+    right: 0; /* Ensure it's at the right edge *
+    width: 100%; /* Take full width */
+    z-index: 1000; /* Ensure it's above other content */
 }
 
 .header:hover {
@@ -34,16 +46,30 @@ body {
 }
 
 .footer {
-    background-color: #FFD700;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    line-height: 0;
+    background-color: #4B0082;
+    padding: 3px;
+    text-align: center;
+    color: #fff;
+    position: fixed; /* Fixed position */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Take full width */
     font-size: 12px;
+    font-weight: bold;
+}
+
+/* Style for the copyright text */
+.footer .copyright {
+    font-size: 12px;
+    margin-top: 5px;
+}
+.footer a {
+    color: #fff; /* Set the color of links in the footer to white */
+    text-decoration: none; /* Remove underline from links */
 }
 
 .footer:hover {
-    background-color: #FFEC8A;
+    /* background-color: #FFEC8A; */
+	text-decoration: underline;
 }
 
 .sheet-link {
