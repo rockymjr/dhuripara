@@ -12,18 +12,21 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1; /* Take full height of the body */
+    padding: 0 15px; /* Add padding to left and right */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 .container {
     max-width: 800px;
     margin: 150px auto 60px; /* Adjust margin to avoid overlap with header and footer */
-    padding: 20px 5px; /* Add padding to the top and bottom */
+    padding: 20px 15px; /* Add padding on all sides */
     background-color: #fff;
     border-radius: 8px;
-	 width: 100%;
+    width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     flex: 1; /* Take remaining vertical space */
     overflow-y: auto; /* Enable vertical scroll if needed */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 .header {
@@ -36,7 +39,7 @@ body {
     position: fixed; /* Fixed position */
     top: 0; /* Stick to the top */
     left: 0; /* Ensure it's at the left edge */
-    right: 0; /* Ensure it's at the right edge *
+    right: 0; /* Ensure it's at the right edge */
     width: 100%; /* Take full width */
     z-index: 1000; /* Ensure it's above other content */
 }
@@ -106,3 +109,39 @@ body {
     max-width: 100%;
     height: auto;
 }
+
+/* Add styles for the notice items */
+.notice-item {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.notice-item:nth-child(odd) {
+    background-color: #e0f7fa; /* Light cyan for odd rows */
+}
+
+.notice-item:nth-child(even) {
+    background-color: #f1f8e9; /* Light lime for even rows */
+}
+
+.notice-item h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.notice-item p {
+    margin: 5px 0;
+}
+
+/* Add a separator line */
+.notice-item::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #ddd;
+    margin: 10px 0 0;
+}
+
