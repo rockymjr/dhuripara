@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 noticeElement.classList.add('notice-item'); // Apply the new style class
                 noticeElement.innerHTML = `
                     <h2>${notice.title}</h2>
-                    <p>${notice.date}</p>
+                    <p><b>${notice.date}</b></p>
                     <p>${notice.content}</p>
                 `;
                 noticesContainer.appendChild(noticeElement);
