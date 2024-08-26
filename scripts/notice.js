@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('notices.json') // Adjust the path if necessary
+    fetch('./data/notices.json') // Adjust the path if necessary
         .then(response => response.json())
         .then(data => {
             const noticesContainer = document.querySelector('#notices-container');

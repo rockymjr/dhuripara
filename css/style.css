@@ -144,4 +144,15 @@ body {
     background-color: #ddd;
     margin: 10px 0 0;
 }
+/* css/style.css */
+.home-button-container {
+    text-align: center;
+    margin: 5px ;
+}
+
+.home-button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
 
