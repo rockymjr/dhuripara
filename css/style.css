@@ -147,12 +147,28 @@ body {
 /* css/style.css */
 .home-button-container {
     text-align: center;
-    margin: 5px ;
+    margin: 0px 5px 20px 5px; ;
 }
 
 .home-button-container button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    background: linear-gradient(90deg, #6a11cb, #2575fc); /* Gradient background */
+    color: #fff; /* White text */
+    border: none; /* Remove border */
+    border-radius: 25px; /* Rounded edges */
+    transition: all 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a shadow */
 }
 
+.home-button-container button:hover {
+    background: linear-gradient(90deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
+    transform: translateY(-3px); /* Slightly lift the button */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.home-button-container button:active {
+    transform: translateY(1px); /* Push effect on click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow */
+}

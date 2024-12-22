@@ -1,0 +1,34 @@
+[
+	{
+		"link": "https://docs.google.com/spreadsheets/d/1o7RdyBCRXi3thlhM7eF64gGYRs2ocvTWIpO1CSoRI1Y/pubhtml",
+		"title": "মোট হিসাব"
+	},
+	{
+		"link": "https://docs.google.com/spreadsheets/d/19dG5iT_bFkhbJ4BPwKN9O__wOepsiLqMag8PWxjWfvI/pubhtml",
+		"title": "মোট মাসিক-জমা"
+	},
+	{
+		"link": "https://docs.google.com/spreadsheets/d/1n7N1HuVpQa177yFqds8Y5r4wUOaV3Tv7CQuV6sP1g2o/pubhtml",
+		"title": "মাইক, বাসন ও অন্নান্য জমা "
+	},
+	{
+		"link": "https://docs.google.com/spreadsheets/d/1d6w9cZfKbbxUncZkXKq1f4fwVug6I3uU8n0DYDDO2ic/pubhtml",
+		"title": "সমস্ত খরচ"
+	},
+	{
+		"link": "https://docs.google.com/spreadsheets/d/1ntvvaFWwFZKMe6G296LwHba5HhvJOUcuXXMuCYU9Q0M/pubhtml",
+		"title": "ঢুড়িপাড়া গ্রামীণ ব্যাঙ্ক"
+	},
+	{
+		"link": "index.html?json=data/others.json",
+		"title": "ঢুড়িপাড়া অন্নান্য তথ্য ও হিসাব"
+	},
+	{
+		"link": "index.html?json=data/2024.json",
+		"title": "পুরোনো হিসাব ২০২৪"
+	},
+	{
+		"link": "index.html?json=data/2023.json",
+		"title": "পুরোনো হিসাব ২০২৩"
+	}
+]

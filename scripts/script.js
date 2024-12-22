@@ -1,5 +1,6 @@
 // scripts/script.js
 
+// Function to fetch and display links based on JSON data
 async function fetchAndDisplayLinks(jsonDataUrl) {
     try {
         const response = await fetch(jsonDataUrl);
@@ -18,8 +19,20 @@ async function fetchAndDisplayLinks(jsonDataUrl) {
     }
 }
 
+// Function to get URL parameters
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+    // Fetch the JSON file name from the URL parameter or fallback to the default
+    const jsonFile = getQueryParam('json') || 'data/default.json';
+
+    // Dynamically set the data-json attribute on the script tag
     const scriptTag = document.querySelector('script[data-json]');
-    const jsonDataUrl = scriptTag.getAttribute('data-json');
-    fetchAndDisplayLinks(jsonDataUrl);
+    scriptTag.setAttribute('data-json', jsonFile);
+
+    // Fetch and display links using the JSON file
+    fetchAndDisplayLinks(jsonFile);
 });
