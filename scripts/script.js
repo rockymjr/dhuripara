@@ -4,14 +4,21 @@
 async function fetchAndDisplayLinks(jsonDataUrl) {
     try {
         const response = await fetch(jsonDataUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         const jsonData = await response.json();
         let counter = 1;
+        const container = document.querySelector(".container");
+        if (!container) {
+            console.error("Container element not found in the DOM.");
+            return;
+        }
         for (const data of jsonData) {
             const linkElement = document.createElement("a");
             linkElement.href = data.link;
             linkElement.classList.add("sheet-link");
             linkElement.textContent = counter++ + ". " + data.title;
-            const container = document.querySelector(".container");
             container.appendChild(linkElement);
         }
     } catch (error) {
@@ -26,13 +33,17 @@ function getQueryParam(param) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Fetch the JSON file name from the URL parameter or fallback to the default
-    const jsonFile = getQueryParam('json') || 'data/default.json';
-
-    // Dynamically set the data-json attribute on the script tag
+    // Get the script tag's initial data-json attribute
     const scriptTag = document.querySelector('script[data-json]');
-    scriptTag.setAttribute('data-json', jsonFile);
+    const defaultJsonFile = scriptTag.getAttribute('data-json');
+
+    // Fetch the JSON file name from the URL parameter or fallback to the default
+    const jsonFile = getQueryParam('json') || defaultJsonFile;
 
     // Fetch and display links using the JSON file
-    fetchAndDisplayLinks(jsonFile);
+    if (jsonFile) {
+        fetchAndDisplayLinks(jsonFile);
+    } else {
+        console.error("No JSON file specified.");
+    }
 });
