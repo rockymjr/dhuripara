@@ -5,7 +5,7 @@
 	},
 	{
 		"link": "https://docs.google.com/spreadsheets/d/19dG5iT_bFkhbJ4BPwKN9O__wOepsiLqMag8PWxjWfvI/pubhtml",
-		"title": "মোট মাসিক-জমা"
+		"title": "মোট ২০ টাকা মাসিক-জমা"
 	},
 	{
 		"link": "https://docs.google.com/spreadsheets/d/1n7N1HuVpQa177yFqds8Y5r4wUOaV3Tv7CQuV6sP1g2o/pubhtml",
@@ -20,19 +20,19 @@
 		"title": "ঢুড়িপাড়া গ্রামীণ ব্যাঙ্ক "
 	},
 	{
-		"link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vT1UeJRBFoA2mvYsWpErovG8BwKGaurgZ9t17s6Dc2GdwtbtKzXTumclI9r3lKpSEt0iCGzGqLVd0Xi/pubhtml",
-		"title": "সরস্বতী পূজা ২০২৫"
-	},
-	{
 		"link": "others.html",
 		"title": "ঢুড়িপাড়া অন্নান্য তথ্য ও হিসাব"
 	},
 	{
+		"link": "2025.html",
+		"title": "২০২৫ হিসাব"
+	},
+	{
 		"link": "2024.html",
-		"title": "পুরোনো হিসাব ২০২৪"
+		"title": "২০২৪ হিসাব"
 	},
 	{
 		"link": "2023.html",
-		"title": "পুরোনো হিসাব ২০২৩"
+		"title": "২০২৩ হিসাব "
 	}
 ]
