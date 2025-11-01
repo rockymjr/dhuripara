@@ -1,27 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ঢুড়িপাড়া গ্রামের হিসাব</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ঢুড়িপাড়া গ্রামের হিসাব</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" as="image" href="images/cover.webp">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-12686369841"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-12686369841');
+</script>
+
+
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4B0082">
+
+<!-- Optional icons -->
+<link rel="icon" href="images/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="images/icon-512.png">
+
+<script>
+  // Register service worker for offline support
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('✅ Service Worker registered:', reg.scope))
+        .catch(err => console.log('❌ Service Worker failed:', err));
+    });
+  }
+</script>
+
 </head>
 <body>
- <div class="wrapper">
+  <div class="wrapper">
     <div class="header">
-		<img src="images/cover.webp" alt="ঢুড়িপাড়া হিসাব" id="header-image">
+      <img src="images/cover.webp" alt="ঢুড়িপাড়া হিসাব" id="header-image">
     </div>
+
     <div class="container">
       <div class="home-button-container">
         <button onclick="window.location.href='index.html'">Home</button>
+      </div>
+      <!-- Links will load here -->
     </div>
-    </div>
+
     <div class="footer">
-		 <div class="copyright">
-                <p>&copy;  &nbsp <a href="https://facebook.com/rockymjr">Rocky Majumdar</a> &nbsp 2024 &nbsp- All rights reserved.</p>
-            </div>
+      <div class="copyright">
+        <p>&copy; <a href="https://facebook.com/rockymjr">Rocky Majumdar</a> 
+        <span id="current-year"></span> - All rights reserved.</p>
+      </div>
     </div>
- </div>
- <script src="scripts/script.js" data-json="data/default.json" defer></script>
+  </div>
+
+  <script src="scripts/script.js" data-json="data/default.json" defer></script>
+ <!-- Offline/Online Status Banner -->
+<div id="status-banner"></div>
+
+<script>
+  const banner = document.getElementById('status-banner');
+  let hideTimeout;
+
+  function showBanner(message, color) {
+    banner.textContent = message;
+    banner.style.backgroundColor = color;
+    banner.style.display = 'block';
+
+    clearTimeout(hideTimeout);
+    hideTimeout = setTimeout(() => {
+      banner.style.display = 'none';
+    }, 5000); // Hide after 5 seconds
+  }
+
+  window.addEventListener('offline', () => {
+    showBanner('🌾 আপনি এখন অফলাইন মোডে আছেন', '#ff4444');
+  });
+
+  window.addEventListener('online', () => {
+    showBanner('✅ আপনি আবার অনলাইনে এসেছেন', '#4CAF50');
+  });
+
+  // Hide by default
+  if (navigator.onLine) banner.style.display = 'none';
+  else showBanner('🌾 আপনি এখন অফলাইন মোডে আছেন', '#ff4444');
+</script>
+
+
 </body>
 </html>

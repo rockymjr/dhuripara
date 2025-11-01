@@ -20,19 +20,19 @@
 		"title": "ঢুড়িপাড়া গ্রামীণ ব্যাঙ্ক"
 	},
 	{
-		"link": "others.html",
+		"link": "index.html?name=others",
 		"title": "ঢুড়িপাড়া অন্নান্য তথ্য"
 	},
 	{
-		"link": "2025.html",
+		"link": "index.html?name=2025",
 		"title": "২০২৫ হিসাব"
 	},
 	{
-		"link": "2024.html",
+		"link": "index.html?name=2024",
 		"title": "২০২৪ হিসাব"
 	},
 	{
-		"link": "2023.html",
+		"link": "index.html?name=2023",
 		"title": "২০২৩ হিসাব "
 	}
 ]

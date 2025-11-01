@@ -1,49 +1,46 @@
 // scripts/script.js
 
-// Function to fetch and display links based on JSON data
-async function fetchAndDisplayLinks(jsonDataUrl) {
-    try {
-        const response = await fetch(jsonDataUrl);
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const jsonData = await response.json();
-        let counter = 1;
-        const container = document.querySelector(".container");
-        if (!container) {
-            console.error("Container element not found in the DOM.");
-            return;
-        }
-        for (const data of jsonData) {
-            const linkElement = document.createElement("a");
-            linkElement.href = data.link;
-            linkElement.classList.add("sheet-link");
-            linkElement.textContent = counter++ + ". " + data.title;
-            container.appendChild(linkElement);
-        }
-    } catch (error) {
-        console.error("Error fetching JSON data:", error);
-    }
+// Fetch and display links from a JSON file
+async function fetchAndDisplayLinks(jsonUrl) {
+  try {
+    const response = await fetch(jsonUrl);
+    if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+    const jsonData = await response.json();
+
+    const container = document.querySelector(".container");
+    if (!container) return console.error("Container not found");
+
+    jsonData.forEach((data, i) => {
+      const link = document.createElement("a");
+      link.href = data.link;
+      link.classList.add("sheet-link");
+      link.textContent = `${i + 1}. ${data.title}`;
+      container.appendChild(link);
+    });
+  } catch (err) {
+    console.error("Error loading JSON:", err);
+  }
 }
 
-// Function to get URL parameters
+// Get URL query parameter
 function getQueryParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Get the script tag's initial data-json attribute
-    const scriptTag = document.querySelector('script[data-json]');
-    const defaultJsonFile = scriptTag.getAttribute('data-json');
+  const scriptTag = document.querySelector('script[data-json]');
+  const defaultJson = scriptTag.getAttribute('data-json');
 
-    // Fetch the JSON file name from the URL parameter or fallback to the default
-    const jsonFile = getQueryParam('json') || defaultJsonFile;
+  // Get year parameter from URL
+  const name = getQueryParam("name");
 
-    // Fetch and display links using the JSON file
-    if (jsonFile) {
-        fetchAndDisplayLinks(jsonFile);
-    } else {
-        console.error("No JSON file specified.");
-    }
+  // Choose JSON file
+  const jsonFile = name ? `data/${name}.json` : defaultJson;
+
+  // Fetch and display data
+  fetchAndDisplayLinks(jsonFile);
+
+  // Set dynamic footer year
+  document.getElementById("current-year").textContent = new Date().getFullYear();
 });
